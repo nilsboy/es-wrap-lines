@@ -1,0 +1,35 @@
+{
+  "name": "es-wrap-lines",
+  "version": "1.0.0",
+  "description": "Wrap long lines of Ecmascript code.",
+  "main": "index.js",
+  "bin": "./bin/cli.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nilsboy/es-wrap-lines.git"
+  },
+  "keywords": [
+    "semicolons",
+    "javascript",
+    "ecmascript",
+    "formatter",
+    "beautifier",
+    "esformatter-plugin"
+  ],
+  "author": "Nils Boysen",
+  "license": "ISC",
+  "dependencies": {
+    "get-stdin": "^4.0.1",
+    "lodash": "^3.10.1",
+    "meow": "^3.4.2",
+    "recast": "^0.10.39",
+    "rocambole": "^0.7.0",
+    "rocambole-token": "^1.2.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
+}
