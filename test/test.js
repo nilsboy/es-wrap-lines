@@ -8,11 +8,11 @@ var _ = require('lodash')
 
 var options
 
-function format(src) {
+function format (src) {
   return formatter(src, options)
 }
 
-beforeEach(function() {
+beforeEach(function () {
   options = {maxLineLength: 5}
 })
 
@@ -82,4 +82,24 @@ it('should not add line break after continue if not followed by statement ender'
 
 it('should not add a line break after an existing line break', function () {
   assert.equal(format('11111\n222222').toString(), '11111\n222222')
+})
+
+it('should split strings and keep double quotes', function () {
+  options.splitStrings = true
+  assert.equal(format('"12345"').toString(), '"123"\n+ "4"\n+ "5"')
+})
+
+it('should split strings and keep single quotes', function () {
+  options.splitStrings = true
+  assert.equal(format("'12345'").toString(), "'123'\n+ '4'\n+ '5'")
+})
+
+it('should split strings and keep indentation', function () {
+  options.splitStrings = true
+  assert.equal(format('  "12345"').toString(), '  "1"\n  + "2"\n  + "3"\n  + "4"\n  + "5"')
+})
+
+it('should split string at edge of maxLineLength', function () {
+  options.splitStrings = true
+  assert.equal(format(";;;'12345'").toString(), ";;;\n'1'\n+ '2'\n+ '3'\n+ '4'\n+ '5'")
 })
