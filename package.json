@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "get-stdin": "^4.0.1",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.21",
     "meow": "^3.4.2",
     "recast": "^0.10.39",
     "rocambole": "^0.7.0",
