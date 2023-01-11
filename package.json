@@ -30,6 +30,6 @@
     "rocambole-token": "^1.2.1"
   },
   "devDependencies": {
-    "mocha": "^2.3.3"
+    "mocha": "^10.2.0"
   }
 }
